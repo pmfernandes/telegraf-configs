@@ -1,0 +1,789 @@
+[
+    {
+        "id": "29e98d22fcd9e0eb",
+        "type": "mqtt in",
+        "z": "1354425379a4e995",
+        "name": "",
+        "topic": "telegraf/PMF002/#",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "501d6e11.e1d5e",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 150,
+        "y": 460,
+        "wires": [
+            [
+                "e6fadc890dc8d855",
+                "78bde3201402bcb9",
+                "835cf0d5fc1a16d2",
+                "e02e5154a31fafb2",
+                "02dde4126856b5b8",
+                "205c3c9a8ca909ea",
+                "7dc4467e1ee4d744"
+            ]
+        ]
+    },
+    {
+        "id": "e6fadc890dc8d855",
+        "type": "switch",
+        "z": "1354425379a4e995",
+        "name": "",
+        "property": "payload.tags.chip",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "k10temp-pci-00c3",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 280,
+        "wires": [
+            [
+                "0186f7dc0a9ede14"
+            ]
+        ]
+    },
+    {
+        "id": "0186f7dc0a9ede14",
+        "type": "ha-sensor",
+        "z": "1354425379a4e995",
+        "name": "PMF002 CPU Temp",
+        "entityConfig": "f778c4127bd8389f",
+        "version": 0,
+        "state": "payload.fields.temp_input",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 540,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "78bde3201402bcb9",
+        "type": "switch",
+        "z": "1354425379a4e995",
+        "name": "",
+        "property": "payload.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "cpu",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 400,
+        "wires": [
+            [
+                "e406ca05644af6ff"
+            ]
+        ]
+    },
+    {
+        "id": "b3e6b8cc62cbbb1b",
+        "type": "ha-sensor",
+        "z": "1354425379a4e995",
+        "name": "PMF002 CPU Usage",
+        "entityConfig": "66eeac46f94764c8",
+        "version": 0,
+        "state": "payload.fields.usage_active",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 680,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "835cf0d5fc1a16d2",
+        "type": "switch",
+        "z": "1354425379a4e995",
+        "name": "",
+        "property": "payload.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "system",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 460,
+        "wires": [
+            [
+                "c8e3524abf4d46e8"
+            ]
+        ]
+    },
+    {
+        "id": "38901e1854162d7c",
+        "type": "ha-sensor",
+        "z": "1354425379a4e995",
+        "name": "PMF002 Uptime",
+        "entityConfig": "a822168683e67c6f",
+        "version": 0,
+        "state": "payload.fields.uptime",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 660,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e02e5154a31fafb2",
+        "type": "switch",
+        "z": "1354425379a4e995",
+        "name": "",
+        "property": "payload.tags.chip",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "drivetemp-scsi-0-0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 340,
+        "wires": [
+            [
+                "18d892b66d08df4d"
+            ]
+        ]
+    },
+    {
+        "id": "18d892b66d08df4d",
+        "type": "ha-sensor",
+        "z": "1354425379a4e995",
+        "name": "PMF002 HDD Temp",
+        "entityConfig": "85aa6d91d9f09445",
+        "version": 0,
+        "state": "payload.fields.temp_input",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 540,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "02dde4126856b5b8",
+        "type": "switch",
+        "z": "1354425379a4e995",
+        "name": "",
+        "property": "payload.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "mem",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 520,
+        "wires": [
+            [
+                "6f9623db91121ae2"
+            ]
+        ]
+    },
+    {
+        "id": "6f9623db91121ae2",
+        "type": "ha-sensor",
+        "z": "1354425379a4e995",
+        "name": "PMF002 Mem Used",
+        "entityConfig": "4be1559c4a467ec6",
+        "version": 0,
+        "state": "payload.fields.used_percent",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 540,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "205c3c9a8ca909ea",
+        "type": "switch",
+        "z": "1354425379a4e995",
+        "name": "",
+        "property": "payload.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "disk",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 580,
+        "wires": [
+            [
+                "f37faf64f6d1177d"
+            ]
+        ]
+    },
+    {
+        "id": "f37faf64f6d1177d",
+        "type": "switch",
+        "z": "1354425379a4e995",
+        "name": "",
+        "property": "payload.tags.device",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "sda2",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 580,
+        "wires": [
+            [
+                "345c4d8756fc639b"
+            ]
+        ]
+    },
+    {
+        "id": "345c4d8756fc639b",
+        "type": "ha-sensor",
+        "z": "1354425379a4e995",
+        "name": "PMF002 HDD Used",
+        "entityConfig": "be97ba981bc977d7",
+        "version": 0,
+        "state": "payload.fields.used_percent",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 720,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e406ca05644af6ff",
+        "type": "switch",
+        "z": "1354425379a4e995",
+        "name": "",
+        "property": "payload.fields.usage_active",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 490,
+        "y": 400,
+        "wires": [
+            [
+                "b3e6b8cc62cbbb1b"
+            ]
+        ]
+    },
+    {
+        "id": "c8e3524abf4d46e8",
+        "type": "switch",
+        "z": "1354425379a4e995",
+        "name": "",
+        "property": "payload.fields.uptime",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 490,
+        "y": 460,
+        "wires": [
+            [
+                "38901e1854162d7c"
+            ]
+        ]
+    },
+    {
+        "id": "7dc4467e1ee4d744",
+        "type": "switch",
+        "z": "1354425379a4e995",
+        "name": "",
+        "property": "payload.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "CPU_Informations",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 640,
+        "wires": [
+            [
+                "f1f122b5a6d8ce15",
+                "54941758171dfbf7",
+                "f7eff257404a8bd0"
+            ]
+        ]
+    },
+    {
+        "id": "f1f122b5a6d8ce15",
+        "type": "ha-sensor",
+        "z": "1354425379a4e995",
+        "name": "PMF002 CPU",
+        "entityConfig": "9b4f816ebde429da",
+        "version": 0,
+        "state": "payload.fields.processorVersion & \" @ \" & payload.fields.processorFrequency",
+        "stateType": "jsonata",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 560,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54941758171dfbf7",
+        "type": "ha-sensor",
+        "z": "1354425379a4e995",
+        "name": "PMF002 Model",
+        "entityConfig": "29ae4d500a3798bc",
+        "version": 0,
+        "state": "payload.fields.systemManufacturer & \" \" & payload.fields.systemProductName & \" - Version \" & payload.fields.systemVersion",
+        "stateType": "jsonata",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 560,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f7eff257404a8bd0",
+        "type": "ha-sensor",
+        "z": "1354425379a4e995",
+        "name": "PMF002 BIOS",
+        "entityConfig": "fca06e0a83537b92",
+        "version": 0,
+        "state": "payload.fields.biosVendor & \" \" & payload.fields.biosVersion & \" (\" & payload.fields.biosReleaseDate & \")\"",
+        "stateType": "jsonata",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 560,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "501d6e11.e1d5e",
+        "type": "mqtt-broker",
+        "name": "HomeAssistant",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f778c4127bd8389f",
+        "type": "ha-entity-config",
+        "server": "55430927.517ce8",
+        "deviceConfig": "",
+        "name": "PMF002 CPU Temp",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "PMF002 CPU Temp"
+            },
+            {
+                "property": "icon",
+                "value": "mdi:thermometer"
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "°C"
+            },
+            {
+                "property": "state_class",
+                "value": "measurement"
+            }
+        ],
+        "resend": false
+    },
+    {
+        "id": "66eeac46f94764c8",
+        "type": "ha-entity-config",
+        "server": "55430927.517ce8",
+        "deviceConfig": "",
+        "name": "PMF002 CPU Usage",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "PMF002 CPU Usage"
+            },
+            {
+                "property": "icon",
+                "value": "mdi:cpu-64-bit"
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "%"
+            },
+            {
+                "property": "state_class",
+                "value": "measurement"
+            }
+        ],
+        "resend": false
+    },
+    {
+        "id": "a822168683e67c6f",
+        "type": "ha-entity-config",
+        "server": "55430927.517ce8",
+        "deviceConfig": "",
+        "name": "PMF002 Uptime",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "PMF002 Uptime"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": "duration"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "s"
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false
+    },
+    {
+        "id": "85aa6d91d9f09445",
+        "type": "ha-entity-config",
+        "server": "55430927.517ce8",
+        "deviceConfig": "",
+        "name": "PMF002 HDD Temp",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "PMF002 HDD Temp"
+            },
+            {
+                "property": "icon",
+                "value": "mdi:thermometer"
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "°C"
+            },
+            {
+                "property": "state_class",
+                "value": "measurement"
+            }
+        ],
+        "resend": false
+    },
+    {
+        "id": "4be1559c4a467ec6",
+        "type": "ha-entity-config",
+        "server": "55430927.517ce8",
+        "deviceConfig": "",
+        "name": "PMF002 Mem Used",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "PMF002 Mem Used"
+            },
+            {
+                "property": "icon",
+                "value": "mdi:memory"
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "%"
+            },
+            {
+                "property": "state_class",
+                "value": "measurement"
+            }
+        ],
+        "resend": false
+    },
+    {
+        "id": "be97ba981bc977d7",
+        "type": "ha-entity-config",
+        "server": "55430927.517ce8",
+        "deviceConfig": "",
+        "name": "PMF002 HDD Used",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "PMF002 HDD Used"
+            },
+            {
+                "property": "icon",
+                "value": "mdi:harddisk"
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "%"
+            },
+            {
+                "property": "state_class",
+                "value": "measurement"
+            }
+        ],
+        "resend": false
+    },
+    {
+        "id": "9b4f816ebde429da",
+        "type": "ha-entity-config",
+        "server": "55430927.517ce8",
+        "deviceConfig": "",
+        "name": "PMF002 CPU",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "PMF002 CPU"
+            },
+            {
+                "property": "icon",
+                "value": "mdi:memory"
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false
+    },
+    {
+        "id": "29ae4d500a3798bc",
+        "type": "ha-entity-config",
+        "server": "55430927.517ce8",
+        "deviceConfig": "",
+        "name": "PMF002 Model",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "PMF002 Model"
+            },
+            {
+                "property": "icon",
+                "value": "mdi:desktop-classic"
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false
+    },
+    {
+        "id": "fca06e0a83537b92",
+        "type": "ha-entity-config",
+        "server": "55430927.517ce8",
+        "deviceConfig": "",
+        "name": "PMF002 BIOS",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "PMF002 BIOS"
+            },
+            {
+                "property": "icon",
+                "value": "mdi:alpha-b-circle-outline"
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false
+    }
+]

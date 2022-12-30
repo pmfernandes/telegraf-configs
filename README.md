@@ -9,7 +9,7 @@ Follow this guide:
 
 ## Get CPU Information
 
- 1. Add telegraf user to sudoers
+1. Add telegraf user to sudoers
  ```bash
 echo  "telegraf ALL=(ALL) NOPASSWD:ALL"  | sudo tee /etc/sudoers.d/telegraf
 ```
@@ -27,3 +27,7 @@ echo  "telegraf ALL=(ALL) NOPASSWD:ALL"  | sudo tee /etc/sudoers.d/telegraf
   csv_delimiter = ";"
   csv_trim_space = true
 ```
+
+## Node Red
+
+Import the file [nodered_flow](./nodered_flow.json) and adjust topic.
